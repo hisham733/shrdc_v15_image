@@ -13,7 +13,6 @@ Custom ERPNext v15 Docker image with all migrated apps pre-installed.
 | Telegram Integration | hisham733/erpnext_telegram_integration_v15 |
 | HRMS | hisham733/hrms_v15 |
 | Metabase Integration | hisham733/metabase_integration_v15 |
-| Payments | hisham733/payments_v15 |
 | Shopify | hisham733/shopify_v15 |
 | SQL Accounting Software | hisham733/sql_accounting_software_v15 |
 
