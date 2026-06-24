@@ -1,0 +1,37 @@
+name: Build and Push Custom Frappe Image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Checkout frappe_docker
+        uses: actions/checkout@v4
+        with:
+          repository: frappe/frappe_docker
+          path: frappe_docker
+
+      - name: Copy apps.json into frappe_docker context
+        run: cp apps.json frappe_docker/apps.json
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PAT }}" | docker login -u hisham733 --password-stdin
+
+      - name: Build and push image
+        working-directory: frappe_docker
+        run: |
+          docker build \
+            --no-cache \
+            --build-arg=FRAPPE_BRANCH=version-15 \
+            --build-arg=CACHE_BUST="${{ github.sha }}" \
+            --secret=id=apps_json,src=apps.json \
+            --tag=hisham733/erpnext-custom:v15 \
+            --file=images/layered/Containerfile .
+          docker push hisham733/erpnext-custom:v15
