@@ -16,6 +16,7 @@ Custom ERPNext v15 Docker image with all migrated apps pre-installed.
 | Metabase Integration | hisham733/metabase_integration_v15 |
 | Shopify | hisham733/shopify_v15 |
 | SQL Accounting Software | hisham733/sql_accounting_software_v15 |
+| E Invoice ERP | hisham733/e_invoice_erp_v15 |
 
 ## Build the Image
 

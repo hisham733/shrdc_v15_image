@@ -75,7 +75,7 @@ services:
           fi
         done;
         echo "sites/common_site_config.json found";
-        bench new-site --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-username=root --db-root-password=admin --install-app erpnext --install-app autocount --install-app short_courses --install-app frepple --install-app barcode_shrdc --install-app erpnext_telegram_integration --install-app hrms --install-app metabase_integration --install-app shopify --install-app sql_accounting_software --set-default frontend;
+        bench new-site --mariadb-user-host-login-scope='%' --admin-password=admin --db-root-username=root --db-root-password=admin --install-app erpnext --install-app autocount --install-app short_courses --install-app frepple --install-app barcode_shrdc --install-app erpnext_telegram_integration --install-app hrms --install-app metabase_integration --install-app shopify --install-app sql_accounting_software --install-app e_invoice_erp --set-default frontend;
 
   db:
     image: mariadb:11.8
