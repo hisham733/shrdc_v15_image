@@ -55,6 +55,28 @@ Once complete, access ERPNext at http://localhost:8080
 - **Username**: Administrator
 - **Password**: admin
 
+## Update Deployment
+
+To update an existing deployment with a new image without data loss:
+
+```bash
+cd shrdc-erpnext
+docker compose -f shrdc-compose.yml pull
+docker compose -f shrdc-compose.yml up -d
+```
+
+All data is preserved. To sync workspace/fixture changes:
+
+```bash
+docker compose -f shrdc-compose.yml exec backend bench --site frontend migrate
+```
+
+## Backup
+
+```bash
+docker compose -f shrdc-compose.yml exec backend bench --site frontend backup
+```
+
 ## Customize
 
 Edit `apps.json` to add or remove apps, then push to trigger a new build.
