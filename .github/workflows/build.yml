@@ -21,6 +21,11 @@ jobs:
       - name: Copy apps.json into frappe_docker context
         run: cp apps.json frappe_docker/apps.json
 
+      - name: Disable uv in Containerfile (seccomp compat)
+        run: |
+          sed -i '/^RUN --mount=type=secret,id=apps_json/i ENV BENCH_DISABLE_UV=1' \
+            frappe_docker/images/layered/Containerfile
+
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PAT }}" | docker login -u hisham733 --password-stdin
 
