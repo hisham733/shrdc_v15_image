@@ -40,13 +40,13 @@ The image will be pushed to `hisham733/erpnext-custom:v15`.
 ## Deploy
 
 ```bash
-docker compose up -d
+docker compose -f shrdc-compose.yml up -d
 ```
 
 Wait a few minutes for the site to be created. Check progress:
 
 ```bash
-docker compose logs create-site -f
+docker compose -f shrdc-compose.yml logs create-site -f
 ```
 
 Once complete, access ERPNext at http://localhost:8080
