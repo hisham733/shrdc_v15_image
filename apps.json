@@ -1,4 +1,5 @@
 [
+  {"url": "https://github.com/frappe/erpnext", "branch": "version-15"},
   {"url": "https://github.com/hisham733/autocount_v15", "branch": "main"},
   {"url": "https://github.com/hisham733/short_courses_v15", "branch": "main"},
   {"url": "https://github.com/hisham733/frepple_v15", "branch": "main"},

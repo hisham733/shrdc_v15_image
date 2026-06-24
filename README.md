@@ -5,7 +5,8 @@ Custom ERPNext v15 Docker image with all migrated apps pre-installed.
 ## Apps Included
 
 | App | Source |
-|---|---|
+|---|---|---|
+| ERPNext | frappe/erpnext (version-15) |
 | Autocount | hisham733/autocount_v15 |
 | Short Courses | hisham733/short_courses_v15 |
 | Frepple | hisham733/frepple_v15 |
